@@ -13,6 +13,10 @@ import java.time.LocalTime;
 @RestController
 public class PdfController {
 
+    @GetMapping(value = "/helloworld")
+    public String helloWorld() {
+        return "Hello world";
+    }
     @GetMapping(value = "/fluxsteam", produces = MediaType.APPLICATION_STREAM_JSON_VALUE)
     public ConnectableFlux<Object> pdf() {
         return Flux.create(fluxSink -> {
